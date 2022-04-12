@@ -38,7 +38,7 @@ def track_markup(_, videoid, user_id, channel, fplay,current_time, total_time):
     return buttons
 
 
-def stream_markup(_, videoid,current_time, total_time):
+def stream_markup(_, videoid,current_time, total_time,user_id):
     buttons = [
           [
             InlineKeyboardButton(
