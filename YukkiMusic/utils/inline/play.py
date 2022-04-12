@@ -7,14 +7,11 @@
 #
 # All rights reserved.
 
-from pyrogram.types import InlineKeyboardButton,audio_markup, audio_timer_markup_start,timer_markup
+from pyrogram.types import InlineKeyboardButton
+from Yukki import db_mem
 
                    
-                    
-                   
-
-
-def track_markup(_, videoid, user_id, channel, fplay,current_time, total_time):
+  def track_markup(_, videoid, user_id, channel, fplay,current_time, total_time):
     buttons = [
           [
             InlineKeyboardButton(
