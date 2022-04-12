@@ -8,10 +8,16 @@
 # All rights reserved.
 
 from pyrogram.types import InlineKeyboardButton
+from Yukki import db_mem
 
-
-def track_markup(_, videoid, user_id, channel, fplay):
+def track_markup(_, videoid, user_id, channel, fplay,current_time, total_time):
     buttons = [
+          [
+            InlineKeyboardButton(
+                text=f"{total_time} ------------------ {current_time}",
+                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
+            )
+        ],
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
@@ -32,8 +38,14 @@ def track_markup(_, videoid, user_id, channel, fplay):
     return buttons
 
 
-def stream_markup(_, videoid):
+def stream_markup(_, videoid,current_time, total_time):
     buttons = [
+          [
+            InlineKeyboardButton(
+                text=f"{total_time} ------------------ {current_time}",
+                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
+            )
+        ],
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
